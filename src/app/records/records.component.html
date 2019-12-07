@@ -1,0 +1,38 @@
+<!-- <p>records works!</p> -->
+<form [formGroup]="this.recordsService.form">
+  <input
+    placeholder="Name"
+    formControlName="personName"
+    type="text"
+    class="records__input"
+  />
+  <input
+    placeholder="Occupation"
+    formControlName="personOccupation"
+    type="text"
+    class="records__input"
+  />
+  <textarea
+    placeholder="Your thoughts about new acquaintance"
+    formControlName="comments"
+    type="text"
+    class="records__input"
+  ></textarea>
+  <h2 class="records-header-traits">Positive Traits</h2>
+  <button
+    class="records__button"
+    *ngFor="let trait of positiveTrait"
+    (click)="addPositive(trait)"
+  >
+    {{ trait }}
+  </button>
+  <ul class="records__collection">
+    <li *ngFor="let trait of positiveOrder">
+      <span class="records__list"> {{ trait }} </span>
+      <a class="records__delete" (click)="removePositive(trait)">x</a>
+    </li>
+  </ul>
+  <button class="records__submit" (click)="onSubmit()">
+    Submit
+  </button>
+</form>

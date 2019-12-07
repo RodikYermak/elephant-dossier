@@ -1,0 +1,40 @@
+.navigation {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: green; */
+}
+.navigation__header {
+  text-transform: uppercase;
+  letter-spacing: 0.7rem;
+  font-weight: 300;
+  padding-left: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  /* background-color: red; */
+  margin: auto;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 49%;
+  /* background-color: yellow; */
+}
+.right {
+  width: 49%;
+  /* background-color: blue; */
+}
+/* 
+.logo {
+  display: inline-block;
+}
+.header {
+  display: inline-block;
+} */

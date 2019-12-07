@@ -1,0 +1,84 @@
+<!-- <p>records-list works!</p> -->
+
+<div class="cards">
+  <div class="card" *ngFor="let order of positiveTraits">
+    <div class="card-header">
+      <img
+        src="https://via.placeholder.com/80"
+        alt="person image"
+        class="card__img"
+      />
+      <ul class="cards__info">
+        <li>NAME: {{ order.payload.doc.data().personName }}</li>
+        <li>OCCUPATION: {{ order.payload.doc.data().personOccupation }}</li>
+        <li>COMMENTS: {{ order.payload.doc.data().comments }}</li>
+      </ul>
+    </div>
+    <div class="card-traits">
+      <div class="card-traits-pros">
+        <h4>PROS</h4>
+        <ul *ngFor="let trait of order.payload.doc.data().positiveTraits">
+          <li>{{ trait }}</li>
+        </ul>
+      </div>
+      <div class="card-traits-cons">
+        <h4>CONS</h4>
+        <ul>
+          <li>Negative</li>
+          <li>Negative</li>
+          <li>Negative</li>
+          <li>Negative</li>
+          <li>Negative</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-buttons">
+      <button class="class-buttons-edit">
+        EDIT
+      </button>
+      <button
+        class="class-buttons-delete"
+        [hidden]="order.payload.doc.data().completed"
+        (click)="deleteOrder(order)"
+      >
+        DELETE
+      </button>
+    </div>
+  </div>
+</div>
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Order No.</th>
+      <th>Name</th>
+      <th>Traits List</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let order of positiveTraits">
+      <td>
+        {{ order.payload.doc.data().orderNumber }}
+      </td>
+      <td>{{ order.payload.doc.data().customerName }}</td>
+      <td>
+        <span *ngFor="let trait of order.payload.doc.data().positiveTraits">
+          {{ trait }}
+        </span>
+      </td>
+      <td
+        [hidden]="order.payload.doc.data().completed"
+        (click)="markCompleted(order)"
+      >
+        <i class="material-icons">check</i>
+      </td>
+      <td
+        [hidden]="order.payload.doc.data().completed"
+        (click)="deleteOrder(order)"
+      >
+        DELETE
+        <i class="material-icons">delete_forever</i>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
