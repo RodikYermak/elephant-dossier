@@ -1,5 +1,23 @@
 <!-- <p>records works!</p> -->
 <form [formGroup]="this.recordsService.form">
+  <div class="text-center">
+    <img
+      [src]="imgSrc"
+      width="200px"
+      height="150px"
+      (click)="fileUploader.click()"
+      class="img-placeholder-upload"
+    />
+  </div>
+  <input
+    type="file"
+    name="pic"
+    accept="image/*"
+    class="records__input-upload"
+    formControlName="personImage"
+    #fileUploader
+    (change)="showPreview($event)"
+  />
   <input
     placeholder="Name"
     formControlName="personName"

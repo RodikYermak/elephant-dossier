@@ -3,8 +3,13 @@
 <div class="cards">
   <div class="card" *ngFor="let order of positiveTraits">
     <div class="card-header">
-      <img
+      <!-- <img
         src="https://via.placeholder.com/80"
+        alt="person image"
+        class="card__img"
+      /> -->
+      <img
+        src="{{ order.payload.doc.data().personImage }}"
         alt="person image"
         class="card__img"
       />

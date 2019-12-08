@@ -10,6 +10,7 @@ import { AngularFirestore } from "@angular/fire/firestore";
 export class RecordsService {
   constructor(private firestore: AngularFirestore) {}
   form = new FormGroup({
+    personImage: new FormControl(""),
     personName: new FormControl(""),
     personOccupation: new FormControl(""),
     comments: new FormControl(""),
