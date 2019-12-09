@@ -14,9 +14,15 @@
     name="pic"
     accept="image/*"
     class="records__input-upload"
-    formControlName="personImage"
     #fileUploader
-    (change)="showPreview($event)"
+    (change)="showPreview($event); startUpload($event.target.files)"
+  />
+  <input
+    *ngIf="downloadURL | async as url"
+    type="text"
+    autofocus
+    formControlName="personImage"
+    [value]="url"
   />
   <input
     placeholder="Name"
@@ -67,8 +73,19 @@
       <a class="records__delete" (click)="removeNegative(trait)">x</a>
     </li>
   </ul>
+  <!-- <div *ngIf="downloadURL | async as url"> -->
+  <!-- <h3>Results!</h3>
+    <img [src]="url" /><br />
+    <a [href]="url" target="_blank" rel="noopener">Download Me! {{ url }}</a> -->
+  <!-- <input
+    *ngIf="downloadURL | async as url"
+    type="text"
+    formControlName="personImage"
+    [value]="url"
+  /> -->
+  <!-- </div> -->
 
-  <button class="records__submit" (click)="onSubmit()">
+  <button class="records__submit" (click)="onSubmit(); resetForm()">
     Submit
   </button>
 </form>

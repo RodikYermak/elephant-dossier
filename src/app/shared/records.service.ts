@@ -14,14 +14,11 @@ export class RecordsService {
     personName: new FormControl(""),
     personOccupation: new FormControl(""),
     comments: new FormControl("")
-    // coffeeOrder: new FormControl(""),
-    // completed: new FormControl(false)
   });
   // createCoffeeOrder(data) {
   createPositiveTraitOrder(data) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
-        // .collection("coffeeOrders")
         .collection("positiveTraits")
         .add(data)
         .then(

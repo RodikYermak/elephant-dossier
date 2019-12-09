@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RecordsService } from "../shared/records.service";
 
+
 @Component({
   selector: "app-records-list",
   templateUrl: "./records-list.component.html",

@@ -21,8 +21,8 @@ textarea {
 }
 
 .records__button {
-  width: 45%;
-  height: 30px;
+  width: 46%;
+  height: 50px;
   background: none;
   /* border: none; */
   padding: 0;
@@ -39,7 +39,8 @@ textarea {
 .records__button:hover {
   background-color: rgba(0, 128, 0, 0.8);
   text-align: center;
-  padding: 0;
+  /* padding: 0; */
+  /* margin: 0; */
 }
 
 .records__collection {
@@ -111,11 +112,11 @@ textarea {
 }
 
 .negative {
-  background-color: red;
+  background-color: rgb(231, 55, 55);
   color: white;
 }
 .negative:hover {
-  background-color: red;
+  background-color: rgba(241, 15, 15, 0.548);
   text-align: center;
-  padding: 0;
+  /* padding: 0; */
 }

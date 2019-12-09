@@ -13,7 +13,7 @@ import { environment } from "../environments/environment";
 
 // components
 import { RecordsComponent } from "./records/records.component";
-import { RecordsListComponent } from "./records-list/records-list.component";
+import { RecordsListComponent} from "./records-list/records-list.component";
 
 // shared
 import { RecordsService } from "./shared/records.service";
