@@ -44,12 +44,30 @@
   >
     {{ trait }}
   </button>
+
+  <h2 class="records-header-traits red-text">Negative Traits</h2>
+  <button
+    class="records__button negative"
+    *ngFor="let trait of negativeTrait"
+    (click)="addNegative(trait)"
+  >
+    {{ trait }}
+  </button>
+
   <ul class="records__collection">
     <li *ngFor="let trait of positiveOrder">
       <span class="records__list"> {{ trait }} </span>
       <a class="records__delete" (click)="removePositive(trait)">x</a>
     </li>
   </ul>
+
+  <ul class="records__collection">
+    <li *ngFor="let trait of negativeOrder">
+      <span class="records__list"> {{ trait }} </span>
+      <a class="records__delete" (click)="removeNegative(trait)">x</a>
+    </li>
+  </ul>
+
   <button class="records__submit" (click)="onSubmit()">
     Submit
   </button>

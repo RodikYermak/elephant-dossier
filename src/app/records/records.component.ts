@@ -38,6 +38,18 @@ export class RecordsComponent implements OnInit {
     "Quiet",
     "Quiet"
   ];
+  negativeTrait = [
+    "Negative 1",
+    "Negative 2",
+    "Negative 3",
+    "Negative 4",
+    "Negative 5",
+    "Negative 6",
+    "Negative 7",
+    "Negative 8",
+    "Negative 9",
+    "Negative 10"
+  ];
 
   positiveOrder = [];
   addPositive = trait => this.positiveOrder.push(trait);
@@ -45,8 +57,17 @@ export class RecordsComponent implements OnInit {
     let index = this.positiveOrder.indexOf(trait);
     if (index > -1) this.positiveOrder.splice(index, 1);
   };
+
+  negativeOrder = [];
+  addNegative = trait => this.negativeOrder.push(trait);
+  removeNegative = trait => {
+    let index = this.negativeOrder.indexOf(trait);
+    if (index > -1) this.negativeOrder.splice(index, 1);
+  };
+
   onSubmit(formValue) {
     this.recordsService.form.value.positiveTraits = this.positiveOrder;
+    this.recordsService.form.value.negativeTraits = this.negativeOrder;
     let data = this.recordsService.form.value;
 
     // var filePath = `${formValue.category}}/${

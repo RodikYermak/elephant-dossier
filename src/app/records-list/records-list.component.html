@@ -28,19 +28,15 @@
       </div>
       <div class="card-traits-cons">
         <h4>CONS</h4>
-        <ul>
-          <li>Negative</li>
-          <li>Negative</li>
-          <li>Negative</li>
-          <li>Negative</li>
-          <li>Negative</li>
+        <ul *ngFor="let trait of order.payload.doc.data().negativeTraits">
+          <li>{{ trait }}</li>
         </ul>
       </div>
     </div>
     <div class="card-buttons">
-      <button class="class-buttons-edit">
+      <!-- <button class="class-buttons-edit">
         EDIT
-      </button>
+      </button> -->
       <button
         class="class-buttons-delete"
         [hidden]="order.payload.doc.data().completed"

@@ -13,9 +13,9 @@ export class RecordsService {
     personImage: new FormControl(""),
     personName: new FormControl(""),
     personOccupation: new FormControl(""),
-    comments: new FormControl(""),
-    coffeeOrder: new FormControl(""),
-    completed: new FormControl(false)
+    comments: new FormControl("")
+    // coffeeOrder: new FormControl(""),
+    // completed: new FormControl(false)
   });
   // createCoffeeOrder(data) {
   createPositiveTraitOrder(data) {
